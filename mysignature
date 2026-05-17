@@ -2,15 +2,14 @@
 ==============================================================================
 Project : Real-Time Multi-Currency Payment Gateway (PoC)
 Version : 0.1.0
-Author  : Kukuh Tripamungkas Wicaksono (Kukuh TW)
-Email   : kukuhtw@gmail.com
-WhatsApp: https://wa.me/628129893706
-LinkedIn: https://id.linkedin.com/in/kukuhtw
+Author  : Alok
+Email   : avimmortal07@gmail.com
+LinkedIn: https://www.linkedin.com/in/alok-verma-5253b3330/
 License : MIT (see LICENSE)
 
-Summary : Monorepo Proof of Concept untuk real-time multi-currency payment
-          gateway berbasis microservices (API Gateway, Payments, FX, Wallet,
-          Risk) dengan HTTP/JSON, observability (Prometheus + Grafana), serta
-          tooling untuk dummy data dan testing.
+Summary : A monorepo Proof of Concept for a real-time multi-currency payment
+          gateway built on microservices (API Gateway, Payments, FX, Wallet,
+          Risk) using gRPC, observability (Prometheus + Grafana), and tooling
+          for dummy data generation and testing.
 ==============================================================================
 */

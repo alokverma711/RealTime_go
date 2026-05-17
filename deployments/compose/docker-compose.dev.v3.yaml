@@ -41,7 +41,8 @@ services:
   # Infra: Kafka (single-node KRaft)
   # ======================
   kafka:
-    image: bitnami/kafka:3.7
+    # bitnami/kafka tags were removed from public Docker Hub; legacy image keeps same env/KRaft layout.
+    image: bitnamilegacy/kafka:3.7
     container_name: compose-kafka
     environment:
       - KAFKA_ENABLE_KRAFT=yes

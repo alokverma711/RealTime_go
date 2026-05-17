@@ -1,56 +1,53 @@
 
-
 # Real-Time Multi-Currency Payment Gateway (PoC)
 
 ```
 ==============================================================================
 Project : Real-Time Multi-Currency Payment Gateway (PoC)
 Version : 0.1.0
-Author  : Kukuh Tripamungkas Wicaksono (Kukuh TW)
-Email   : kukuhtw@gmail.com
-WhatsApp: https://wa.me/628129893706
-LinkedIn: https://id.linkedin.com/in/kukuhtw
-License : MIT (see LICENSE)
+Author  : Alok
+License : MITk
 
-Summary : Monorepo Proof of Concept untuk real-time multi-currency payment
-          gateway berbasis microservices (API Gateway, Payments, FX, Wallet,
-          Risk) dengan gRPC, observability (Prometheus + Grafana), serta
-          tooling untuk dummy data dan testing.
+Summary : A monorepo Proof of Concept for a real-time multi-currency payment
+          gateway built on microservices (API Gateway, Payments, FX, Wallet,
+          Risk) using gRPC, observability (Prometheus + Grafana), and tooling
+          for dummy data generation and testing.
 ==============================================================================
 ```
 
 ---
 
-## 📖 Ringkasan
+## 📖 Overview
 
-Proyek ini adalah **Proof of Concept (PoC)** untuk sistem **pembayaran lintas mata uang real-time** berbasis **microservices**.
-Menggunakan kombinasi:
+This project is a **Proof of Concept (PoC)** for a **real-time cross-currency payment system** built on a **microservices architecture**.
+It combines:
 
-* **Golang** → layanan domain (Wallet, FX, Risk, Payments, API Gateway)
-* **Rust** → layanan berperforma tinggi (Database handler, Payment Worker)
-* **gRPC** → komunikasi antar service
-* **Postgres** → database utama
-* **Kafka** → message broker untuk event-driven payment worker
-* **Prometheus + Grafana** → observability metrics & dashboard
+* **Golang** → domain services (Wallet, FX, Risk, Payments, API Gateway)
+* **Rust** → high-performance services (Database handler, Payment Worker)
+* **gRPC** → inter-service communication
+* **Postgres** → primary database
+* **Kafka** → message broker for the event-driven payment worker
+* **Prometheus + Grafana** → observability metrics and dashboards
 
-Tujuan: memberikan **arsitektur modular, scalable, resilient** yang dapat dijadikan blueprint untuk sistem pembayaran modern.
-
----
-
-## ⚙️ Fitur Utama
-
-* **gRPC Microservices** untuk domain Wallet, FX, Risk, Payments.
-* **Multi-currency FX Service** dengan dummy kurs USD, IDR, SGD.
-* **Idempotency**: menghindari double spend/reservasi ganda.
-* **Risk Service**: rule engine sederhana untuk fraud detection.
-* **Async Worker (Rust)**: settlement via Kafka.
-* **Observability**: Prometheus + Grafana dashboard siap pakai.
-* **Testing Tools**: e2e tests, load tests, dummy data generator.
+**Goal:** Provide a modular, scalable, and resilient architecture that can serve as a blueprint for modern payment systems.
 
 ---
 
-## 🏗️ Arsitektur
+## ⚙️ Key Features
 
+* **gRPC Microservices** for Wallet, FX, Risk, and Payments domains.
+* **Multi-currency FX Service** with dummy exchange rates for USD, IDR, and SGD.
+* **Idempotency** to prevent double-spending or duplicate reservations.
+* **Risk Service** — a simple rule engine for fraud detection.
+* **Async Worker (Rust)** — settlement via Kafka.
+* **Observability** — Prometheus + Grafana dashboards ready to use.
+* **Testing Tools** — end-to-end tests, load tests, and a dummy data generator.
+
+---
+
+## 🏗️ Architecture
+
+```
 flowchart LR;
 
 %% Clients
@@ -61,8 +58,10 @@ G[API Gateway (Go)\nHTTP + gRPC]:::gw
 subgraph GO[Go Services]
   W[Wallet Svc]:::svc
   FX[FX Svc]:::svc
-  R[Risk Svc]()
+  R[Risk Svc]
+```
 
+---
 
 ## 🔄 Sequence Diagram: MakePayment Flow
 
@@ -109,80 +108,75 @@ sequenceDiagram
 
 ---
 
-## 📂 Struktur Direktori
+## 📂 Directory Structure
 
-Beberapa direktori penting:
+Key directories:
 
-* `cmd/` → entrypoint tiap service (wallet-grpc, payments-grpc, dll)
-* `services/` → implementasi service (`api-gateway`, `db-rs`, `payments-rs`, dll)
-* `proto/` → definisi protobuf
-* `deployments/` → docker-compose, k8s manifest
+* `cmd/` → entry points for each service (wallet-grpc, payments-grpc, etc.)
+* `services/` → service implementations (`api-gateway`, `db-rs`, `payments-rs`, etc.)
+* `proto/` → Protobuf definitions
+* `deployments/` → Docker Compose and Kubernetes manifests
 * `grafana/` & `prometheus/` → observability setup
-* `tests/` → e2e & load testing
-* `tools/` → generator dummy data
+* `tests/` → end-to-end and load testing
+* `tools/` → dummy data generator
 
 ---
 
-## ⚙️ Setup Lingkungan
+## ⚙️ Environment Setup
 
-### Prasyarat
+### Prerequisites
 
 * Docker & Docker Compose
 * Go 1.23+
 * Rust (nightly, cargo, sqlx-cli)
 * Protoc compiler
-* Node.js (untuk e2e test)
+* Node.js (for end-to-end tests)
 
-### Jalankan Stack
+### Running the Stack
 
 ```bash
-# Clone repo
-git clone https://github.com/your-org/realtime-payment-gateway.git
-cd realtime-payment-gateway
+# Clone the repository
 
 # Generate dummy data
 make gen-dummy
 
-# Jalankan stack dengan Docker Compose
+# Start the stack with Docker Compose
 make dev-grpc
 
-# Stop
+# Stop the stack
 make down-grpc
 ```
-
 
 ---
 
 ## 🔌 Published Ports (Docker Compose)
 
-Semua port yang dipublish saat menjalankan stack via `docker-compose`:
+All ports exposed when running the stack via `docker-compose`:
 
-| Service           | Port(s)   | Keterangan          |
-| ----------------- | --------- | ------------------- |
-| Postgres          | **15432** | Database utama      |
-| Kafka             | **9092**  | Message broker      |
-| Kafka UI          | **9081**  | Web UI Kafka        |
-| Kafka Exporter    | **9308**  | Metrics Kafka       |
-| API Gateway       | **18080** | HTTP/REST + gRPC    |
-| Wallet gRPC       | **19093** | gRPC service        |
-| Wallet Metrics    | **19103** | Prometheus /metrics |
-| FX gRPC           | **19102** | gRPC service        |
-| Risk gRPC         | **19094** | gRPC service        |
-| Risk Metrics      | **19104** | Prometheus /metrics |
-| DB Service (Rust) | **19095** | gRPC service        |
-| DB Metrics        | **19105** | Prometheus /metrics |
-| Payments-RS       | **19096** | gRPC service        |
-| Payments Metrics  | **19106** | Prometheus /metrics |
-| Prometheus        | **19097** | Monitoring          |
-| Grafana           | **3000**  | Dashboard           |
+| Service           | Port(s)   | Description             |
+| ----------------- | --------- | ----------------------- |
+| Postgres          | **15432** | Primary database        |
+| Kafka             | **9092**  | Message broker          |
+| Kafka UI          | **9081**  | Kafka web UI            |
+| Kafka Exporter    | **9308**  | Kafka metrics           |
+| API Gateway       | **18080** | HTTP/REST + gRPC        |
+| Wallet gRPC       | **19093** | gRPC service            |
+| Wallet Metrics    | **19103** | Prometheus /metrics     |
+| FX gRPC           | **19102** | gRPC service            |
+| Risk gRPC         | **19094** | gRPC service            |
+| Risk Metrics      | **19104** | Prometheus /metrics     |
+| DB Service (Rust) | **19095** | gRPC service            |
+| DB Metrics        | **19105** | Prometheus /metrics     |
+| Payments-RS       | **19096** | gRPC service            |
+| Payments Metrics  | **19106** | Prometheus /metrics     |
+| Prometheus        | **19097** | Monitoring              |
+| Grafana           | **3000**  | Dashboard               |
 
-> Catatan: Gunakan mapping ini untuk mengakses service secara langsung (misalnya dengan `grpcurl`, `psql`, atau browser).
-
-
+> **Note:** Use these mappings to access services directly via tools like `grpcurl`, `psql`, or a browser.
 
 ---
 
-## 🔌 Endpoint gRPC
+## 🔌 gRPC Endpoints
 
 * **WalletService**: `GetBalance`, `Debit`, `Credit`
 * **FXService**: `Convert(From, To, Amount)`
@@ -206,21 +200,16 @@ Semua port yang dipublish saat menjalankan stack via `docker-compose`:
 ./clean-start.sh
 ```
 
+---
 
-## 📌 Catatan
+## 📌 Notes
 
-* Rust services dipakai untuk path kritikal performa tinggi.
-* Go services dipakai untuk orchestrator & domain logic.
-* PoC ini bisa jadi dasar implementasi production.
+* Rust services are used for high-performance critical paths.
+* Go services handle orchestration and domain logic.
+* This PoC can serve as a solid foundation for a production implementation.
 
 ---
 
-## 👨‍💻 Kontributor
+## 👨‍💻 Contributor
 
-* **Kukuh Tripamungkas Wicaksono (Kukuh TW)**
-
-  * ✉️ Email: [kukuhtw@gmail.com](mailto:kukuhtw@gmail.com)
-  * 💬 WhatsApp: [https://wa.me/628129893706](https://wa.me/628129893706)
-  * 🔗 LinkedIn: [id.linkedin.com/in/kukuhtw](https://id.linkedin.com/in/kukuhtw)
-
----
+* **Alok**
