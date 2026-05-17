@@ -78,3 +78,4 @@ func main() {
     log.Fatalf("[wallet-grpc] metrics: %v", err)
   }
 }
+ 

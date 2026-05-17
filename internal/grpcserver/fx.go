@@ -56,4 +56,4 @@ func (s *FxServer) RegisterServer(grpcServer *grpc.Server) {
     reflection.Register(grpcServer)
     
     log.Println("FX gRPC server registered")
-}
+} 

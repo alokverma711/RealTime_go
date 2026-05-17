@@ -186,3 +186,4 @@ impl Db for DbService {
 fn internal<E: std::fmt::Display>(e: E) -> Status {
     Status::internal(e.to_string())
 }
+ 

@@ -15,3 +15,4 @@ type PaymentOut struct {
     Reason string `json:"reason,omitempty"`
     Ref    string `json:"ref,omitempty"` // reservation_id / reference
 }
+ 

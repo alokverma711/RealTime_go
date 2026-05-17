@@ -47,3 +47,4 @@ func RandomAccountsHandler(wallet walletClientCompat) http.HandlerFunc {
 		_ = json.NewEncoder(w).Encode(out)
 	}
 }
+ 

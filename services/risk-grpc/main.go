@@ -34,3 +34,4 @@ func main() {
 	log.Println("[risk-grpc] serving metrics on :9104 /metrics")
 	log.Fatal(http.ListenAndServe(":9104", nil))
 }
+ 

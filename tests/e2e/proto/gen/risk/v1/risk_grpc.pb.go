@@ -119,3 +119,4 @@ var RiskService_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "proto/gen/risk/v1/risk.proto",
 }
+ 

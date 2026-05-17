@@ -29,3 +29,4 @@ COPY --from=build /out/app /app/app
 COPY services/api-gateway/static /app/static
 EXPOSE 8080
 ENTRYPOINT ["/app/app"]
+ 

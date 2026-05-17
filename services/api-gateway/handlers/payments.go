@@ -130,3 +130,4 @@ func PaymentsHandler(d Deps) http.HandlerFunc {
 		writeJSON(w, http.StatusOK, out)
 	}
 }
+ 

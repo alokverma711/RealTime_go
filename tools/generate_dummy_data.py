@@ -300,3 +300,4 @@ print(" - seeds/fx_rates.json")
 print(" - seeds/risk_rules.json")
 print(f" - seeds/transactions.csv       ({NUM_TX})")
 print("Load ke Postgres: OK" if USE_DB else "Load ke Postgres: SKIPPED (psycopg not installed)")
+ 

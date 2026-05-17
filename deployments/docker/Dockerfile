@@ -37,3 +37,4 @@ RUN if [ "$WITH_STATIC" = "1" ] && [ -d "/tmp/static" ]; then true; fi
 
 ENTRYPOINT ["/app/app"]
 # NOTE: Tidak EXPOSE port di sini (tiap service beda). Biarkan compose yang map portnya.
+ 

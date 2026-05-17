@@ -21,3 +21,4 @@ message EvaluateResponse {
   bool   allow  = 1;
   string reason = 2; // jika deny
 }
+ 

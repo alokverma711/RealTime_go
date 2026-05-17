@@ -294,3 +294,4 @@ func file_proto_gen_fx_v1_fx_proto_init() {
 	file_proto_gen_fx_v1_fx_proto_goTypes = nil
 	file_proto_gen_fx_v1_fx_proto_depIdxs = nil
 }
+ 

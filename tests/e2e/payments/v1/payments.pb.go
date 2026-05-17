@@ -193,3 +193,4 @@ func file_proto_gen_payments_v1_payments_proto_init() {
 	file_proto_gen_payments_v1_payments_proto_goTypes = nil
 	file_proto_gen_payments_v1_payments_proto_depIdxs = nil
 }
+ 

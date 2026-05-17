@@ -53,3 +53,4 @@ service WalletService {
   rpc Reserve    (ReserveRequest)    returns (ReserveResponse);
   rpc Capture    (CaptureRequest)    returns (CaptureResponse);
 }
+ 

@@ -12,3 +12,4 @@ service FXService {
   rpc GetRate(RateRequest) returns (RateResponse);
   rpc Convert(ConvertRequest) returns (ConvertResponse);
 }
+ 

@@ -20,3 +20,4 @@ spec:
   selector: { app: fx }
   ports: [{ port: 8082, targetPort: 8082 }]
   type: ClusterIP
+ 

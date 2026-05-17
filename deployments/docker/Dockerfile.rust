@@ -44,3 +44,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY --from=builder /out/app /app/app
 EXPOSE 9096 9106
 ENTRYPOINT ["/app/app"]
+ 

@@ -18,3 +18,4 @@ message SeedRulesRequest {
 message SeedRulesResponse {
   bool ok = 1;
 }
+ 

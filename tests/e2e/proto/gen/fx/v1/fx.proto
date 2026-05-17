@@ -24,3 +24,4 @@ service FxService {
   rpc GetRate  (GetRateRequest) returns (GetRateResponse);
   rpc Convert  (ConvertRequest) returns (ConvertResponse);
 }
+ 

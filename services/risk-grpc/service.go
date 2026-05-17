@@ -94,3 +94,4 @@ func (s *RiskService) Evaluate(ctx context.Context, req *riskv1.ScoreRequest) (*
 	riskRequests.WithLabelValues("allow", "").Inc()
 	return &riskv1.EvaluateResponse{Allow: true, Reason: ""}, nil
 }
+ 

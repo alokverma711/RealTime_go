@@ -29,3 +29,4 @@ func (s *WalletServer) Reserve(ctx context.Context, in *walletv1.ReserveRequest)
 func (s *WalletServer) Capture(ctx context.Context, in *walletv1.CaptureRequest) (*walletv1.CaptureResponse, error) {
   return &walletv1.CaptureResponse{Ok: true}, nil
 }
+ 

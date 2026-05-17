@@ -40,3 +40,4 @@ func IncRequest(service, status, method string) {
 func ObserveDuration(service, status string, seconds float64) {
     PaymentRequestDuration.WithLabelValues(service, status).Observe(seconds)
 }
+ 

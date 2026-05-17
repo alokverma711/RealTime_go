@@ -42,3 +42,4 @@ COPY --from=builder /app/services/db-rs/target/release/db-rs /app/db-rs
 ENV RUST_LOG=info
 EXPOSE 9095 9105
 ENTRYPOINT ["/app/db-rs"]
+ 

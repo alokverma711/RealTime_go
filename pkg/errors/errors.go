@@ -20,3 +20,4 @@ func (e E) Error() string {
 func Wrap(code, msg string, err error) error {
 	return E{Code: code, Message: msg, Err: err}
 }
+ 

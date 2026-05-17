@@ -41,3 +41,4 @@ service PaymentsService {
   rpc CreatePayment (CreatePaymentRequest) returns (CreatePaymentResponse);
   rpc LogAndSettle (LogAndSettleRequest)   returns (LogAndSettleResponse);
 }
+ 

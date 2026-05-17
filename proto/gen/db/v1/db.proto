@@ -79,3 +79,4 @@ service Db {
   rpc RollbackReservation   (RollbackReservationRequest)  returns (RollbackReservationResponse);
   rpc GetRandomAccounts     (GetRandomAccountsRequest)    returns (GetRandomAccountsResponse);
 }
+ 

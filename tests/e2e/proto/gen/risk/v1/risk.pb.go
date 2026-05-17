@@ -199,3 +199,4 @@ func file_proto_gen_risk_v1_risk_proto_init() {
 	file_proto_gen_risk_v1_risk_proto_goTypes = nil
 	file_proto_gen_risk_v1_risk_proto_depIdxs = nil
 }
+ 

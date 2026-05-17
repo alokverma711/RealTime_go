@@ -225,4 +225,4 @@
     │       └── main.go
     ├── generate_dummy_data.py
     ├── generate_transaksi.py
-    └── generate_wallets.py
+    └── generate_wallets.py 

@@ -15,3 +15,4 @@ func (s *RiskServer) Score(ctx context.Context, in *riskv1.ScoreRequest) (*riskv
   // cocokin dulu dengan definisi proto risk/v1/risk.proto kamu.)
   return &riskv1.ScoreResponse{}, nil
 }
+ 

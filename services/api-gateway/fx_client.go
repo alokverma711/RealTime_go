@@ -44,3 +44,4 @@ func updateRates() {
 	}
 	log.Printf("FX update response: %v", resp.Message)
 }
+ 

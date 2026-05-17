@@ -195,3 +195,4 @@ var WalletService_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "proto/gen/wallet/v1/wallet.proto",
 }
+ 

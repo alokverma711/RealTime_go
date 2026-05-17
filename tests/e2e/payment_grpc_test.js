@@ -26,4 +26,4 @@ export default function () {
 
   client.close();
   sleep(1);
-}
+} 

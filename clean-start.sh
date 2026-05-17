@@ -76,3 +76,4 @@ Observability:
   - Prometheus   : http://localhost:19097
   - Grafana      : http://localhost:3000  (admin / admin)
 EOF
+ 

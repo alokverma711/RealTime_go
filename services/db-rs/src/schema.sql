@@ -42,3 +42,4 @@ CREATE TABLE IF NOT EXISTS payments (
   status           TEXT NOT NULL CHECK (status IN ('SUCCESS','FAILED')),
   created_at       TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+ 

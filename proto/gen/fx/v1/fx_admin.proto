@@ -19,3 +19,4 @@ message RefreshRandomRatesResponse {
   string message = 2;
   repeated Rate pushed = 3; // reuse Rate dari fx.proto
 }
+ 

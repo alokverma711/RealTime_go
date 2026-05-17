@@ -52,3 +52,4 @@ func (b *Bus) WaitResult(ctx context.Context, key []byte, timeout time.Duration)
         }
     }
 }
+ 

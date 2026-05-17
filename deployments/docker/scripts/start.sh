@@ -9,3 +9,4 @@ fi
 
 # Run the binary
 exec "$@"
+ 

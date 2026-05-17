@@ -34,3 +34,4 @@ message ConvertRequest {
 message ConvertResponse {
   double amount = 1; // hasil konversi
 }
+ 

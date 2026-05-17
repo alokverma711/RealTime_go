@@ -70,3 +70,4 @@ if s.Risk != nil {
 
   return &paymentsv1.CreatePaymentResponse{PaymentId: paymentID}, nil
 }
+ 

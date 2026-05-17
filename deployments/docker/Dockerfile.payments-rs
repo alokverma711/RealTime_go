@@ -28,3 +28,4 @@ COPY --from=builder /app/services/payments-rs/target/release/payments-rs /app/pa
 ENV RUST_LOG=info
 EXPOSE 9096 9106
 ENTRYPOINT ["/app/payments-rs"]
+ 

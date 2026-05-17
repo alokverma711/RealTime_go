@@ -407,3 +407,4 @@ func file_proto_gen_wallet_v1_wallet_proto_init() {
 	file_proto_gen_wallet_v1_wallet_proto_goTypes = nil
 	file_proto_gen_wallet_v1_wallet_proto_depIdxs = nil
 }
+ 

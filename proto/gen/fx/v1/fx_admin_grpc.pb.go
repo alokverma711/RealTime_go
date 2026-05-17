@@ -122,3 +122,4 @@ var FxAdminService_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "fx/v1/fx_admin.proto",
 }
+ 

@@ -26,3 +26,4 @@ message AccountSeed {
   double daily_limit = 5;
   string status      = 6; // ACTIVE/BLOCKED
 }
+ 

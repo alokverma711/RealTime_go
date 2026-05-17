@@ -32,3 +32,4 @@ func main() {
 	log.Println("[payments-grpc] serving metrics on :9101 /metrics")
 	log.Fatal(http.ListenAndServe(":9101", nil))
 }
+ 
